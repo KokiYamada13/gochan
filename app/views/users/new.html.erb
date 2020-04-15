@@ -1,0 +1,35 @@
+<div class="text-center">
+  <h1>Sign up</h1>
+</div>
+
+<div class="container">
+  <%= form_for @user do |f|%>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="text-center">
+      <h1 class="title">アカウントを作成</h1>
+      <div class="form-group">
+        <%= f.label :name, '名前' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, 'メールアドレス' %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, 'パスワード' %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation, 'パスワード(確認)' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="text-center">
+        <%= f.submit '登録', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
