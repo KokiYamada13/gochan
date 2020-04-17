@@ -9,8 +9,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    # @topic = current_user.topics.build(topic_params)
-    @topic = Topic.new(topic_params)
+    @topic = current_user.topics.build(topic_params)
+    # @topic = Topic.new(topic_params)
     if @topic.save
         flash[:success] = 'ネタを投稿しました。'
         redirect_to root_url
