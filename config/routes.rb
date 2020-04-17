@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users
+
+  get 'text', to:'topics#new'
+  resources :topics
 end
