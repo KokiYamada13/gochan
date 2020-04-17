@@ -1,5 +1,12 @@
-<div class="lp__form">
-  <h2 class="lp__form-title">5chをはじめよう！</h2>
-  <a><%= link_to 'アカウント作成', signup_path, class: "lp__form-btn" %></a>
-  <a><%= link_to 'ログイン', login_path, class: "lp__form-btn" %></a>
-</div>
+<% if logged_in? %>
+  <div class="lp__form">
+    <h2 class="lp__form-title">5ch ホーム</h2>
+  </div>
+<% else %>
+  <div class="lp__form">
+    <h2 class="lp__form-title">5chをはじめよう！</h2>
+    <a><%= link_to 'アカウント作成', signup_path, class: "lp__form-btn" %></a>
+    <a><%= link_to 'ログイン', login_path, class: "lp__form-btn" %></a>
+  </div>
+<% end %>
+
