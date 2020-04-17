@@ -8,6 +8,9 @@
         <ul class="navbar-nav ml-auto align-items-center">
             <% if logged_in? %>
                 <li class="nav-item active">
+                    <a><%= link_to '投稿する', text_path, class: "nav-link" %></a>
+                </li>
+                <li class="nav-item active">
                     <a><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></a>
                 </li>
             <% else %>
