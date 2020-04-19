@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+必要な機能：
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ログイン機能 (email + pass)
+* 閲覧・投稿機能
+* スレッド機能 (スレッドにレスをつけていくスタイル)
+* カテゴリ設定 (スレッドごと / 1つのスレッドに複数付与可能)
+* 検索機能 (単語 / スレッド及びレスの横断検索)
