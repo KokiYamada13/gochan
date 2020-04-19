@@ -1,0 +1,8 @@
+<div class="container">
+    <p><%= @topic.id %></p>
+    <%= form_for @response do |f| %>
+      <p>名前：<%= f.text_field :name, class: 'form-control' %></p>
+      <div><%= f.text_area :comment, class: 'form-control' %></div>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+    <% end %>
+</div>
