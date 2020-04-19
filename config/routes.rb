@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users
 
-  get 'text', to:'topics#new'
-  post 'text', to:'topics#create'
+  get 'text', to: 'topics#new'
+  post 'text', to: 'topics#create'
   resources :topics
+
+  get 'response', to: 'responses#new'
+  resources :responses, only: [:new, :create]
 end

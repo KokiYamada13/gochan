@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 2020_04_19_160800) do
   create_table "responses", force: :cascade do |t|
     t.string "name"
     t.text "comment"
-    t.bigint "topic_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["topic_id"], name: "index_responses_on_topic_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -42,6 +40,5 @@ ActiveRecord::Schema.define(version: 2020_04_19_160800) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "responses", "topics"
   add_foreign_key "topics", "users"
 end
