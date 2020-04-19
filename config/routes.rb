@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :users
 
   get 'text', to:'topics#new'
+  post 'text', to:'topics#create'
   resources :topics
 end

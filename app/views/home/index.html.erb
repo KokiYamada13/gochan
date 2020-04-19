@@ -3,18 +3,29 @@
     <h2 class="lp__form-title">5ch ホーム</h2>
   </div>
 
-  <div class="row">
-    <div class="col-lg-8">
-      <% if @topic %>
-        <% @topic.each do |topic| %>
-          <div class="thread_title">
-            <p><%= topic.title %></p>
-          </div>
-          <div class="thread_content">
-            <p><%= topic.content %></p>
-          </div>
+  <div id="accordion">
+    <div class="row">
+      <div class="col-lg-8">
+        <% if @topics %>
+          <% @topics.each do |topic| %>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <%= topic.title %>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <%= topic.content %>
+                  <%= link_to 'スレッド', topic_path(topic), class: "collapse show" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 <% else %>
